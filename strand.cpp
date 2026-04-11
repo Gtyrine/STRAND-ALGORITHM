@@ -27,7 +27,7 @@ void strandSort(list<int> &ip, list<int> &op)
     } 
   op.merge(sublist);
     
-    strandSort(ip, op);
+    strandSort(ip, op);//recursive case
 }
 
 int main(void)
