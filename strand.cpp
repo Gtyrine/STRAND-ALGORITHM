@@ -9,14 +9,16 @@ void strandSort(list<int> &ip, list<int> &op)
     if (ip.empty())
         return;
       /*we are using class templates here.*/
+     //here we are assigning the first element to be added  to be the first item of the sublist.
     list<int> sublist;
     sublist.push_back(ip.front());
     ip.pop_front();
-    
+    // we use this for loop to traverse the rest of the items in the list.
     for (list<int>::iterator it = ip.begin(); it != ip.end(); ) {
 
       /* this section of code implements the ascending direction of sorting 
       the list*/ 
+       
         if (*it > sublist.back()) {
             sublist.push_back(*it);   
             it = ip.erase(it);
