@@ -2,13 +2,13 @@
 #include <bits/stdc++.h>
 using namespace std;
 /* strand sort is implemnted in stl::list because it recquires frequent operations in the middle of the list 
-which would otherwise be expensive if an array is used*/
+which would otherwise be expensive if an array is used. the list is imlemented as a doubly linked list.*/
 void strandSort(list<int> &ip, list<int> &op)
 {
-    
+    /*we use recursion to implement strand as it is a recursive algorithm. this line of code is the base case.*/
     if (ip.empty())
         return;
-  
+      /*we are using class templates here.*/
     list<int> sublist;
     sublist.push_back(ip.front());
     ip.pop_front();
@@ -32,23 +32,24 @@ void strandSort(list<int> &ip, list<int> &op)
 
 int main(void)
 {
+    /*adding element to the list*/
     list<int> ip;
-ip.push_back(10);
+ip.push_back(21);
+ip.push_back(43);
+ip.push_back(27);
+ip.push_back(14);
+ip.push_back(0);
 ip.push_back(5);
-ip.push_back(30);
-ip.push_back(40);
-ip.push_back(2);
-ip.push_back(4);
-ip.push_back(9);
+ip.push_back(70);
 
-   
     list<int> op;
-
     
-    strandSort(ip, op);
+    strandSort(ip, op);//sorting the list 
+    
 for (list<int>::iterator it = op.begin(); it != op.end(); ++it) {
     int x = *it;
-    cout << x << " ";
+    cout << x << " ";//printing the sorted list
+    
 }
     return 0;
 }
