@@ -43,23 +43,7 @@ ip.push_back(14);
 ip.push_back(0);
 ip.push_back(5);
 ip.push_back(70);
-#include <iostream>
-using namespace std;
 
-void f(int n) {
-    
-    cout << "F(" << n << ")'s Stack Frame Pushed\n";
-    if (n > 1) {
-        f(n - 1);
-        f(n - 1);
-    }
-    cout << "F(" << n << ")'s Stack Frame Removed\n";
-}
-
-int main() {
-    f(3);
-    return 0;
-}
     list<int> op;
     
     strandSort(ip, op);//sorting the list 
